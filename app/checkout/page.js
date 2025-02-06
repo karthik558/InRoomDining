@@ -1,9 +1,7 @@
 'use client'
 import Layout from "@/components/layout/Layout"
 import { useSelector } from "react-redux"
-import { useState } from "react"
-import { saveAs } from 'file-saver'
-import html2pdf from "html2pdf.js"
+import { useState, useEffect } from "react"
 
 export default function Checkout() {
     const { cart } = useSelector((state) => state.shop) || {}
@@ -63,6 +61,18 @@ export default function Checkout() {
         })
     }
 
+    // Generate Unique Order ID
+    const generateOrderId = () => {
+        const randomFourDigitNumber = Math.floor(1000 + Math.random() * 9000)
+        return randomFourDigitNumber
+    }
+
+    const [orderId, setOrderId] = useState(generateOrderId())
+
+    useEffect(() => {
+        setOrderId(generateOrderId())
+    }, [])
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -76,39 +86,40 @@ export default function Checkout() {
         const date = new Date()
         const formattedDate = date.toISOString().split('T')[0]
         const formattedTime = date.toTimeString().split(' ')[0].replace(/:/g, '')
-        const randomFourDigitNumber = Math.floor(1000 + Math.random() * 9000)
-        const orderId = randomFourDigitNumber
         const fileName = `Tamara-IRD-${formData.firstName}-${formData.roomNumber}-${formattedDate}-${formattedTime}-${orderId}.pdf`
 
-        // Generate PDF
-        const element = document.getElementById('order-details')
-        const options = {
-            margin: 1,
-            filename: fileName,
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 1 },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-        }
+        // Dynamically import html2pdf and generate PDF (only in the browser)
+        if (typeof window !== 'undefined') {
+            const html2pdf = (await import('html2pdf.js')).default
+            const element = document.getElementById('order-details')
+            const options = {
+                margin: 1,
+                filename: fileName,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 1 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            }
 
-        html2pdf().from(element).set(options).save().then(() => {
-            // Open WhatsApp with pre-filled message
-            const orderSummaryText = cart.map(item => `*${item.title}* × ${item.qty} - ₹${(item.qty * item.price?.max).toFixed(2)}`).join('\n')
-            const message = encodeURIComponent(`*Order Summary for ${formData.firstName} ${formData.lastName}:*\n\n` +
-                `*Order ID:* ${orderId}\n` +
-                `*First Name:* ${formData.firstName}\n` +
-                `*Last Name:* ${formData.lastName}\n` +
-                `*Email:* ${formData.email}\n` +
-                `*Room Number:* ${formData.roomNumber}\n` +
-                `*Phone Number:* ${formData.phoneNumber}\n` +
-                `*Special Request:* ${formData.specialRequest}\n\n` +
-                `*Order Summary:*\n${orderSummaryText}\n\n` +
-                `*Cart Subtotal:* ₹${total.toFixed(2)}\n` +
-                `*Including (GST) 18%:* ₹${gstAmount.toFixed(2)}\n` +
-                `*Order Total:* ₹${totalIncludingGst.toFixed(2)}`
-            )
-            const whatsappUrl = `https://wa.me/8129624036?text=${message}`
-            window.open(whatsappUrl, '_blank')
-        })
+            html2pdf().from(element).set(options).save().then(() => {
+                // Open WhatsApp with pre-filled message
+                const orderSummaryText = cart.map(item => `*${item.title}* × ${item.qty} - ₹${(item.qty * item.price?.max).toFixed(2)}`).join('\n')
+                const message = encodeURIComponent(`*Order Summary for ${formData.firstName} ${formData.lastName}:*\n\n` +
+                    `*Order ID:* ${orderId}\n` +
+                    `*First Name:* ${formData.firstName}\n` +
+                    `*Last Name:* ${formData.lastName}\n` +
+                    `*Email:* ${formData.email}\n` +
+                    `*Room Number:* ${formData.roomNumber}\n` +
+                    `*Phone Number:* ${formData.phoneNumber}\n` +
+                    `*Special Request:* ${formData.specialRequest}\n\n` +
+                    `*Order Summary:*\n${orderSummaryText}\n\n` +
+                    `*Cart Subtotal:* ₹${total.toFixed(2)}\n` +
+                    `*Including (GST) 18%:* ₹${gstAmount.toFixed(2)}\n` +
+                    `*Order Total:* ₹${totalIncludingGst.toFixed(2)}`
+                )
+                const whatsappUrl = `https://wa.me/8129624036?text=${message}`
+                window.open(whatsappUrl, '_blank')
+            })
+        }
     }
 
     return (
@@ -172,10 +183,7 @@ export default function Checkout() {
                                     </div>
                                     <div className="col-lg-6 col-md-12">
                                         <div id="order-details" className="your-order mb-30 ">
-                                            <h3>Order Details</h3>
-                                            {/* <div className="invoice-header">
-                                                <h2>Invoice</h2>
-                                            </div> */}
+                                            <h3>Order Details - #{orderId}</h3>
                                             <div className="guest-details">
                                                 <h4>Guest Information</h4>
                                                 <p><strong>First Name:</strong> {formData.firstName}</p>
