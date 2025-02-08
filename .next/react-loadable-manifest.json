@@ -1,4 +1,10 @@
 {
+  "app/checkout/page.js -> html2pdf.js": {
+    "id": "app/checkout/page.js -> html2pdf.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_html2pdf_js_dist_html2pdf_js.js"
+    ]
+  },
   "node_modules/jspdf/dist/jspdf.es.min.js -> canvg": {
     "id": "node_modules/jspdf/dist/jspdf.es.min.js -> canvg",
     "files": [

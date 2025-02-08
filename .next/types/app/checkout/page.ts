@@ -1,4 +1,4 @@
-// File: /Users/MAC/Downloads/Restaurant Booking/app/checkout/page.js
+// File: /Users/MAC/Repository/InRoomDining/app/checkout/page.js
 import * as entry from '../../../../app/checkout/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

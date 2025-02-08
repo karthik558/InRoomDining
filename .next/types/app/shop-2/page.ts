@@ -1,4 +1,4 @@
-// File: /Users/MAC/Downloads/Restaurant Booking/app/shop-2/page.js
+// File: /Users/MAC/Repository/InRoomDining/app/shop-2/page.js
 import * as entry from '../../../../app/shop-2/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
