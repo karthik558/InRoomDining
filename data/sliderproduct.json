@@ -3,7 +3,7 @@
         {
             "subTitle": "Mixed Rice",
             "title": "Takikomi Gohan",
-            "link": "/shop-2",
+            "link": "/product",
             "buttonText": "Add to cart",
             "image": "/assets/img/slider/banner-1.jpg",
             "titleShape": "/assets/img/icon/title-shape-02.jpg"
@@ -11,7 +11,7 @@
         {
             "subTitle": "Seeds & Herbs",
             "title": "Pomegranate Rice",
-            "link": "/shop-2",
+            "link": "/product",
             "buttonText": "Add to cart",
             "image": "/assets/img/slider/banner-2.jpg",
             "titleShape": "/assets/img/icon/title-shape-02.jpg"
@@ -19,7 +19,7 @@
         {
             "subTitle": "South Indian",
             "title": "Idli",
-            "link": "/shop-2",
+            "link": "/product",
             "buttonText": "Add to cart",
             "image": "/assets/img/slider/banner-3.jpg",
             "titleShape": "/assets/img/icon/title-shape-02.jpg"
@@ -27,13 +27,13 @@
     ],
     "banners": [
         {
-            "link": "/shop-2",
+            "link": "/product",
             "image": "/assets/img/slider/banner-slider-01.jpg",
             "subTitle": "Green Gram",
             "title": "Palak Paneer"
         },
         {
-            "link": "/shop-2",
+            "link": "/product",
             "image": "/assets/img/slider/banner-slider-02.jpg",
             "subTitle": "A Taste of India",
             "title": "Masala Dosa"

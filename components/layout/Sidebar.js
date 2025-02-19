@@ -19,7 +19,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
                     <Link href="/cart" target="_parent"><i className="fal fa-shopping-cart" /> Cart</Link>
                 </div>
                 <div className="tpsideinfo__wishlist-link">
-                    <Link href="/shop-2" target="_parent"><i className="fal fa-shopping-basket" /> Shop</Link>
+                    <Link href="/product" target="_parent"><i className="fal fa-shopping-basket" /> Shop</Link>
                 </div>
                 <div className="tpsideinfo__wishlist-link">
                     <Link href="/wishlist" target="_parent"><i className="fal fa-heart" /> Wishlist</Link>

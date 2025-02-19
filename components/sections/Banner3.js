@@ -13,7 +13,7 @@ export default function Banner3() {
                                     <img src="assets/img/banner/banner-thumb-01.jpg" alt="" />
                                     <div className="bannertext text-center">
                                         <span className="bannertext__subtitle">Hair Color</span>
-                                        <h4 className="bannertext__title mb-40"><Link href="/shop-2">Reactive Providence <br /> Hair Color</Link></h4>
+                                        <h4 className="bannertext__title mb-40"><Link href="/product">Reactive Providence <br /> Hair Color</Link></h4>
                                         <div className="bannertext__btn tpexclusive__btn">
                                             <Link href="/shop" className="tp-btn  banner-animation">Shop Now</Link>
                                         </div>
@@ -26,10 +26,10 @@ export default function Banner3() {
                                     <div className="bannerbox">
                                         <span className="bannerbox__subtitle">Cosmetics</span>
                                         <h4 className="bannerbox__title mb-95">
-                                            <Link href="/shop-2">New Modern  <br /> Stylist Makeup</Link>
+                                            <Link href="/product">New Modern  <br /> Stylist Makeup</Link>
                                         </h4>
                                         <div className="bannerbox__btn">
-                                            <Link className="tp-btn banner-animation mr-25" href="/shop-2">Shop Now
+                                            <Link className="tp-btn banner-animation mr-25" href="/product">Shop Now
                                                 <i className="fal fa-long-arrow-right" />
                                             </Link>
                                         </div>
@@ -43,7 +43,7 @@ export default function Banner3() {
                                         </h4>
                                         <span className="bannerbox__subtitle banner-bottom-bg mb-130">Intensive Glow <Link href="/shop">C+ Serum</Link></span>
                                         <div className="bannerbox__btn">
-                                            <Link className="tp-btn banner-animation mr-25" href="/shop-2">Shop Now
+                                            <Link className="tp-btn banner-animation mr-25" href="/product">Shop Now
                                                 <i className="fal fa-long-arrow-right" />
                                             </Link>
                                         </div>
@@ -56,7 +56,7 @@ export default function Banner3() {
                                     <div className="bannerbox">
                                         <span className="bannerbox__subtitle banner-right-bg mb-200">Featured Brand</span>
                                         <div className="bannerbox__btn">
-                                            <Link className="tp-btn banner-animation mr-25" href="/shop-2">Shop Now
+                                            <Link className="tp-btn banner-animation mr-25" href="/product">Shop Now
                                                 <i className="fal fa-long-arrow-right" />
                                             </Link>
                                         </div>

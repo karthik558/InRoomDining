@@ -73,18 +73,18 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                                         <a className="tp-cat-toggle" onClick={handleToggle} role="button"><i className="fal fa-bars" />Categories</a>
                                         <div className="category-menu category-menu-off" style={{ display: `${isToggled ? "block" : "none"}` }}>
                                             <ul className="cat-menu__list">
-                                                <li><Link href="/shop-2"><i className="fal fa-stars" /> All Time Favorite</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-sandwich" /> Sandwich</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-wheat" /> Salads</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-hamburger" /> Burgers</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-bread-slice" /> Breads</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-cookie" /> Deserts</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-pizza" /> Pizza</Link></li>
-                                                <li><Link href="/shop-2"><i className="fal fa-chess-bishop" /> Straters</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-stars" /> All Time Favorite</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-sandwich" /> Sandwich</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-wheat" /> Salads</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-hamburger" /> Burgers</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-bread-slice" /> Breads</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-cookie" /> Deserts</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-pizza" /> Pizza</Link></li>
+                                                <li><Link href="/product"><i className="fal fa-chess-bishop" /> Straters</Link></li>
                                             </ul>
                                             <div className="daily-offer">
                                                 <ul>
-                                                    <li><Link href="/shop-2">All Time Favorite</Link></li>
+                                                    <li><Link href="/product">All Time Favorite</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
