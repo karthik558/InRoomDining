@@ -1,16 +1,27 @@
 'use client'
-import { deleteCart } from "@/features/shopSlice"
+import { addQty, deleteCart } from "@/features/shopSlice"
 import Link from "next/link"
 import { useDispatch, useSelector } from "react-redux"
 
 export default function HeaderCart({ isCartSidebar, handleCartSidebar }) {
     const { cart } = useSelector((state) => state.shop) || {}
-
     const dispatch = useDispatch()
 
     // Delete cart item
     const deleteCartHandler = (id) => {
         dispatch(deleteCart(id))
+    }
+
+    // Increase cart quantity by dispatching addQty with an incremented quantity.
+    const increaseCartHandler = (item) => {
+        dispatch(addQty({ id: item.id, qty: item.qty + 1 }))
+    }
+
+    // Decrease cart quantity by dispatching addQty with a decremented quantity (cannot go below 1).
+    const decreaseCartHandler = (item) => {
+        if (item.qty > 1) {
+            dispatch(addQty({ id: item.id, qty: item.qty - 1 }))
+        }
     }
 
     // Calculate total
@@ -22,10 +33,7 @@ export default function HeaderCart({ isCartSidebar, handleCartSidebar }) {
 
     return (
         <>
-            <div
-                className={`tpcartinfo tp-cart-info-area p-relative ${isCartSidebar ? "tp-sidebar-opened" : ""
-                    }`}
-            >
+            <div className={`tpcartinfo tp-cart-info-area ${isCartSidebar ? "tp-sidebar-opened" : ""}`}>
                 <button className="tpcart__close" onClick={handleCartSidebar}>
                     <i className="fal fa-times" />
                 </button>
@@ -38,11 +46,8 @@ export default function HeaderCart({ isCartSidebar, handleCartSidebar }) {
                                     <li key={i}>
                                         <div className="tpcart__item">
                                             <div className="tpcart__img">
-                                                <img src={`/assets/img/product/${item.imgf}`} alt="" />
-                                                <div
-                                                    className="tpcart__del"
-                                                    onClick={() => deleteCartHandler(item?.id)}
-                                                >
+                                                <img src={`/assets/img/product/${item.imgf}`} alt={item.title} />
+                                                <div className="tpcart__del" onClick={() => deleteCartHandler(item.id)}>
                                                     <Link href="#">
                                                         <i className="far fa-times-circle" />
                                                     </Link>
@@ -53,8 +58,21 @@ export default function HeaderCart({ isCartSidebar, handleCartSidebar }) {
                                                     <Link href="/shop-details">{item.title}</Link>
                                                 </span>
                                                 <div className="tpcart__cart-price">
-                                                    <span className="quantity">{item?.qty} x </span>
-                                                    <span className="new-price">₹ {item?.price.max}</span>
+                                                    <button
+                                                        onClick={() => decreaseCartHandler(item)}
+                                                        className="quantity-btn quantity-btn-decrease"
+                                                        disabled={item.qty <= 1}
+                                                    >
+                                                        –
+                                                    </button>
+                                                    <span className="quantity">{item.qty} x </span>
+                                                    <span className="new-price">₹{item.price.max}</span>
+                                                    <button
+                                                        onClick={() => increaseCartHandler(item)}
+                                                        className="quantity-btn quantity-btn-increase"
+                                                    >
+                                                        +
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,11 +95,6 @@ export default function HeaderCart({ isCartSidebar, handleCartSidebar }) {
                             </div>
                         </div>
                     </div>
-                    {/*
-            <div className="tpcart__free-shipping text-center">
-              <span>Free shipping for orders <b>under 10km</b></span>
-            </div>
-          */}
                 </div>
             </div>
             <div

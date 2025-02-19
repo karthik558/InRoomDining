@@ -10116,3 +10116,72 @@ p.checkout-coupon input[type="text"]:focus {
   padding: 0;
   list-style: none;
 }
+
+.tpcart__cart-price {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 8px;
+}
+
+.quantity-btn-decrease {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.quantity-btn-increase {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tpcart__item {
+  display: flex;
+  padding: 12px 0;
+}
+
+.tpcart__del {
+  position: absolute;
+  top: -10px;
+  left: auto;
+  border: none;
+  cursor: pointer;
+}
+
+.tpcart__content-title a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tpcart__total-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.tpcart__checkout-btn a {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
