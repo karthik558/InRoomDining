@@ -4,7 +4,7 @@ import Product1 from "@/components/sections/Product1"
 import Slider1 from "@/components/sections/Slider1"
 import Testimonial2 from "@/components/sections/Testimonial2"
 export const metadata = {
-    title: 'Lilac IRD: Your Personal Dining Retreat',
+    title: 'Lilac IRD: Home',
 }
 export default function Home() {
     return (

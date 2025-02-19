@@ -1,6 +1,10 @@
 
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+export const metadata = {
+    title: 'Lilac IRD: Sign In',
+}
+
 export default function SignIn() {
 
     return (
