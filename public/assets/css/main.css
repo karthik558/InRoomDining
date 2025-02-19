@@ -10096,3 +10096,23 @@ p.checkout-coupon input[type="text"]:focus {
   line-height: 1.5;
   font-weight: 500;
 }
+.scrollable-cart {
+  max-height: 700px !important;
+  overflow-y: auto !important;
+  display: block !important;
+  padding-right: 10px;
+}
+
+.scrollable-cart::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-cart {
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollable-cart ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
