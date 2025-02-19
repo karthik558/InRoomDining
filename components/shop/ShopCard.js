@@ -24,7 +24,7 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                 <div className="tpproduct tpproductitem mb-15 p-relative">
                     <div className="tpproduct__thumb">
                         <div className="tpproduct__thumbitem p-relative">
-                            <Link href={`/shop/${item.id}`}>
+                            <Link href={`/product/`}>
                                 <img src={`/assets/img/product/${item.imgf}`} alt="product-thumb" />
                             </Link>
                             <div className="tpproduct__thumb-bg">
@@ -41,7 +41,7 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                     </div>
                     <div className="tpproduct__content-area">
                         <h3 className="tpproduct__title mb-5">
-                            <Link href={`/shop/${item.id}`}>{item.title}</Link>
+                            <Link href={`/product/`}>{item.title}</Link>
                         </h3>
                         <div className="tpproduct__priceinfo p-relative">
                             <div className="tpproduct__ammount">
