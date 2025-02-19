@@ -2,7 +2,6 @@
     {
         "id": 1,
         "title": "Lemon Rice",
-        "description": "This is Tomato Rice, a popular South Indian dish where rice is cooked with tomatoes, spices, and herbs. ",
         "imgf": "product-1.jpg",
         "rating": 74,
         "category": [
@@ -18,7 +17,6 @@
     {
         "id": 2,
         "title": "Indian Thali",
-        "description": "Staple foods of Indian cuisine include pearl millet (bājra), rice, whole-wheat flour (aṭṭa), and a variety of lentils, such as masoor (most often red lentils), tuer (pigeon peas), urad (black gram), and moong (mung beans). Lentils may be used whole, dehusked—for example, dhuli moong or dhuli urad—or split. ",
         "imgf": "product-2.jpg",
         "rating": 40,
         "category": [
@@ -34,7 +32,6 @@
     {
         "id": 3,
         "title": "Indian Thali Variety",
-        "description": "an Indian meal served on a round platter with a variety of small bowls containing different dishes.",
         "imgf": "product-3.jpg",
         "rating": 60,
         "category": [
@@ -50,7 +47,6 @@
     {
         "id": 4,
         "title": "Vegetarian Shami Kebab",
-        "description": "Shami kebab is a popular local variety of kebab from the Indian subcontinent. It is part of Indian, Pakistani and Bangladeshi cuisines. It is composed of a small patty of minced meat generally beef, but occasionally lamb or mutton, with ground chickpeas, egg to hold it together, and spices.",
         "imgf": "product-4.jpg",
         "rating": 90,
         "category": [
@@ -66,7 +62,6 @@
     {
         "id": 5,
         "title": "Aloo Bharta",
-        "description": "This is Aloo Bharta, an Indian dish made from mashed potatoes, spices, and herbs. ",
         "imgf": "product-5.jpg",
         "rating": 89,
         "category": [
@@ -82,7 +77,6 @@
     {
         "id": 6,
         "title": "Indian Thali Variety 2",
-        "description": "Saffron has become synonymous with Authentic Vegetarian Barbecue & North Indian Cuisine. The Saffron chain epitomizes the royal experience in flavour, aroma and purity. It was first of its kind as it introduced the unique “ do it yourself “ concept in dining.",
         "imgf": "product-6.jpg",
         "rating": 67,
         "category": [
@@ -98,7 +92,6 @@
     {
         "id": 7,
         "title": "Indian Thali Variety 3",
-        "description": "This is an Indian thali, a platter consisting of various dishes served together. It typically includes rice, dal (lentil soup), curries (vegetable or meat-based), bread (like roti or poori), and accompaniments like chutney, pickles, and yogurt.",
         "imgf": "product-7.jpg",
         "rating": 90,
         "category": [
@@ -114,7 +107,6 @@
     {
         "id": 8,
         "title": "Masala Dosa",
-        "description": "Masala Dosa is one of the most popular South Indian breakfast dishes served in restaurants and tiffin centres. Dosa is a crepe made using fermented rice and lentil batter. Masala Dosa is one that is crisp, aromatic, flavourful and has a potato masala or spiced seasoned potatoes stuffed in it.",
         "imgf": "product-8.jpg",
         "rating": 97,
         "category": [
@@ -130,7 +122,6 @@
     {
         "id": 9,
         "title": "Samoosa",
-        "description": "Samosa, a crispy and spicy deep fried snack that has an crisp and flaky outer layer made of maida and rich filling of mashed potato, peas and spices is a popular street food of India. It's a favorite snack among people of all ages and generally served with masala tea and tamarind chutney as afternoon snack.",
         "imgf": "product-9.jpg",
         "rating": 80,
         "category": [
@@ -146,7 +137,6 @@
     {
         "id": 10,
         "title": "Palak Paneer",
-        "description": "The dish boasts a rich and creamy texture with a blend of earthy spinach, soft paneer, and aromatic spices like ginger, garlic, cumin, turmeric, and garam masala.",
         "imgf": "product-10.jpg",
         "rating": 91,
         "category": [
@@ -162,7 +152,6 @@
 {
         "id": 11,
         "title": "Takikomi gohan",
-        "description": "Takikomi gohan, which is a Japanese mixed rice dish. It appears to be garnished with sesame seeds and chopped green onions.",
         "imgf": "product-11.jpg",
         "rating": 80,
         "category": [
@@ -178,7 +167,6 @@
     {
         "id": 12,
         "title": "Chole Masala",
-        "description": "Chole Masala or Chole, which is a chickpea curry originating from the Indian subcontinent and a staple dish in North Indian cuisine. It's a popular and widely eaten dish in India and Pakistan, with variations in recipes across regions, and has gained global popularity. ",
         "imgf": "product-12.jpg",
         "rating": 65,
         "category": [
@@ -194,7 +182,6 @@
     {
         "id": 13,
         "title": "Besan Chilla",
-        "description": "Besan Chilla, a savory pancake made from gram flour (besan) and vegetables. It is a popular and nutritious breakfast or snack in India. Besan Chilla is also known as vegetarian omelet due to its color and texture.",
         "imgf": "product-13.jpg",
         "rating": 87,
         "category": [
@@ -210,7 +197,6 @@
     {
         "id": 14,
         "title": "Fattoush",
-        "description": "Fattoush, a Lebanese salad featuring toasted or fried pieces of khubz (Arabic flat bread) combined with mixed greens and vegetables like radishes, cucumber, and tomatoes. A tangy dressing, often made with sumac and/or pomegranate molasses, ties the salad together. It originated in Lebanon as a way to use leftover bread.",
         "imgf": "product-14.jpg",
         "rating": 95,
         "category": [
@@ -226,7 +212,6 @@
     {
         "id": 15,
         "title": "Idli",
-        "description": "Idli, a South Indian steamed cake made from fermented rice and lentil batter, served with chutney and sambar. The green chutney is likely coconut chutney, while the orange one is tomato chutney.",
         "imgf": "product-15.jpg",
         "rating": 98,
         "category": [
@@ -242,7 +227,6 @@
     {
         "id": 16,
         "title": "Masala Dosa 1",
-        "description": "Masala Dosa, a popular South Indian dish, specifically from Karnataka. It is a crepe made from fermented rice and lentil batter, filled with a spiced potato and onion mixture. It is commonly served with chutneys and sambar. Masala Dosa is a popular breakfast dish in South India and can be found even in luxury hotels.",
         "imgf": "product-16.jpg",
         "rating": 91,
         "category": [
@@ -258,7 +242,6 @@
     {
         "id": 17,
         "title": "Methi Thepla",
-        "description": "Thepla, a soft Indian flatbread from Gujarati cuisine, also known as Methi paratha when made with fenugreek leaves. It's a popular dish in Gujarat, especially among the Jain community.",
         "imgf": "product-17.jpg",
         "rating": 60,
         "category": [
@@ -274,7 +257,6 @@
     {
         "id": 18,
         "title": "Pomegranate Rice",
-        "description": "Pomegranate Rice, grains sautéed in fat before cooking in liquid. This dish often includes ingredients like wild rice, pomegranate seeds, and herbs. It can be served as a salad or a side dish.",
         "imgf": "product-18.jpg",
         "rating": 91,
         "category": [
@@ -290,7 +272,6 @@
     {
         "id": 19,
         "title": "Vegetable Soup",
-        "description": "It is a thick Italian soup primarily made with vegetables, and may include pasta or rice. Common ingredients are onions, carrots, celery, potatoes, cabbage, tomatoes, and legumes such as beans.",
         "imgf": "product-19.jpg",
         "rating": 85,
         "category": [
@@ -306,7 +287,6 @@
     {
         "id": 20,
         "title": "Chilli Paneer",
-        "description": "with Chilli Paneer being an Indo-Chinese dish using paneer cheese, and Mapo Tofu originating from the Sichuan province of China using tofu. Mapo Tofu is known for its use of Sichuan peppercorns, which gives it a unique and spicy flavor.",
         "imgf": "product-20.jpg",
         "rating": 93,
         "category": [
