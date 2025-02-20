@@ -1,5 +1,6 @@
 {
     "product": {
+        "id": 1,
         "image": "/assets/img/food/food1.png",
         "offerPrice": "₹899",
         "currentPrice": "₹899",
@@ -8,6 +9,6 @@
         "link": "/product",
         "description": "This is a thali, a traditional Indian meal served on a round platter with various small bowls containing different curries, dal, vegetables, rice, and bread like roti or paratha. ",
         "startTime": "2025-02-04T00:00:00Z",
-        "endTime": "2025-02-10T00:00:00Z"
+        "endTime": "2025-04-10T00:00:00Z"
     }
 }

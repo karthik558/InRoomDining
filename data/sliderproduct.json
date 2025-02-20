@@ -1,28 +1,28 @@
 {
     "slides": [
         {
+            "id": 1,
             "subTitle": "Mixed Rice",
             "title": "Takikomi Gohan",
             "link": "/product",
             "buttonText": "Add to cart",
-            "image": "/assets/img/slider/banner-1.jpg",
-            "titleShape": "/assets/img/icon/title-shape-02.jpg"
+            "image": "/assets/img/slider/banner-1.jpg"
         },
         {
+            "id": 2,
             "subTitle": "Seeds & Herbs",
             "title": "Pomegranate Rice",
             "link": "/product",
             "buttonText": "Add to cart",
-            "image": "/assets/img/slider/banner-2.jpg",
-            "titleShape": "/assets/img/icon/title-shape-02.jpg"
+            "image": "/assets/img/slider/banner-2.jpg"
         },
         {
+            "id": 3,
             "subTitle": "South Indian",
             "title": "Idli",
             "link": "/product",
             "buttonText": "Add to cart",
-            "image": "/assets/img/slider/banner-3.jpg",
-            "titleShape": "/assets/img/icon/title-shape-02.jpg"
+            "image": "/assets/img/slider/banner-3.jpg"
         }
     ],
     "banners": [
