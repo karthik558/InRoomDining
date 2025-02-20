@@ -1,8 +1,21 @@
+'use client'
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import CartShow from "../elements/CartShow"
 import WishListShow from "../elements/WishListShow"
 
 export default function HeaderSticky({ scroll, isCartSidebar, handleCartSidebar }) {
+    
+    const router = useRouter()
+    const [searchQuery, setSearchQuery] = useState("")
+    
+        const handleSearchSubmit = (e) => {
+            e.preventDefault()
+            if (!searchQuery.trim()) return
+            // Redirect to the product page with the search query as a URL parameter
+            router.push(`/product?query=${encodeURIComponent(searchQuery)}`)
+        }
     return (
         <>
             <div id="header-sticky" className={`logo-area tp-sticky-one mainmenu-5 ${scroll ? "header-sticky" : ""}`}>
@@ -32,10 +45,17 @@ export default function HeaderSticky({ scroll, isCartSidebar, handleCartSidebar 
                                 </div>
                                 <div className="header-meta__search-5 ml-25">
                                     <div className="header-search-bar-5">
-                                        <form action="#">
-                                            <div className="search-info-5 p-relative">
-                                                <button className="header-search-icon-5"><i className="fal fa-search" /></button>
-                                                <input type="text" placeholder="Search products..." />
+                                        <form onSubmit={handleSearchSubmit}>
+                                            <div className="search-info p-relative">
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search products..."
+                                                    value={searchQuery}
+                                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                                />
+                                                <button type="submit" className="header-search-icon">
+                                                    <i className="fal fa-search" />
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
