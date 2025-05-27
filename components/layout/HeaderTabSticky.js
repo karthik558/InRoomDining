@@ -5,7 +5,7 @@ import Link from "next/link"
 import CartShow from "../elements/CartShow"
 import WishListShow from "../elements/WishListShow"
 
-export default function HeaderTabSticky({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar }) {
+export default function HeaderTabSticky({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar, hideSearchBar }) {
     const router = useRouter()
     const [searchQuery, setSearchQuery] = useState("")
 
@@ -38,29 +38,33 @@ export default function HeaderTabSticky({ scroll, isMobileMenu, handleMobileMenu
                         </div>
                         <div className="col-lg-9 col-md-8">
                             <div className="header-meta-info d-flex align-items-center justify-content-between">
-                                <div className="header-search-bar">
-                                    <form onSubmit={handleSearchSubmit}>
-                                        <div className="search-info p-relative">
-                                            <input
-                                                type="text"
-                                                placeholder="Search products..."
-                                                value={searchQuery}
-                                                onChange={(e) => setSearchQuery(e.target.value)}
-                                            />
-                                            <button type="submit" className="header-search-icon">
-                                                <i className="fal fa-search" />
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div className="header-meta__social d-flex align-items-center ml-25">
+                                {!hideSearchBar && (
+                                    <div className="header-search-bar">
+                                        <form onSubmit={handleSearchSubmit}>
+                                            <div className="search-info p-relative">
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search products..."
+                                                    value={searchQuery}
+                                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                                />
+                                                <button type="submit" className="header-search-icon">
+                                                    <i className="fal fa-search" />
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                )}
+                                <div className={`header-meta__social d-flex align-items-center justify-content-end ${hideSearchBar ? 'ml-auto' : 'ml-25'}`}>
                                     <button className="header-cart p-relative tp-cart-toggle" onClick={handleCartSidebar}>
                                         <i className="fal fa-shopping-cart" />
                                         <CartShow />
                                     </button>
-                                    <Link href="/sign-in">
-                                        <i className="fal fa-user" />
-                                    </Link>
+                                    {!hideSearchBar && (
+                                        <Link href="/sign-in">
+                                            <i className="fal fa-user" />
+                                        </Link>
+                                    )}
                                     <Link href="/wishlist" className="header-cart p-relative tp-cart-toggle">
                                         <i className="fal fa-heart" />
                                         <WishListShow />

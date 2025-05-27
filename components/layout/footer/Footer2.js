@@ -95,7 +95,6 @@ export default function Footer2() {
                                 <div className="col-xl-6 col-lg-7 col-md-5">
                                     <div className="footer-copyright__content">
                                         <span>© Copyright {new Date().getFullYear()} <Link href="/"></Link>. All rights reserved. Developed by <Link href="https://karthiklal.in"> KARTHIK LAL</Link>.</span>
-                                        {/* © 2024. Designed & Developed by KARTHIK LAL. All rights reserved. */}
                                     </div>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@ import HeaderMobSticky from "../HeaderMobSticky"
 import HeaderSticky from "../HeaderSticky"
 import HeaderTabSticky from "../HeaderTabSticky"
 
-export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar }) {
+export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar, hideSearchBar }) {
     const [isToggled, setToggled] = useState(true)
     const [searchQuery, setSearchQuery] = useState("")
     const router = useRouter()
@@ -50,23 +50,25 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                                 </div>
                             </div>
                             <div className="col-xl-10 col-lg-9">
-                                <div className="header-meta-info d-flex align-items-center justify-content-between">
-                                    <div className="header-search-bar">
-                                        <form onSubmit={handleSearchSubmit}>
-                                            <div className="search-info p-relative">
-                                                <input
-                                                    type="text"
-                                                    placeholder="Search products..."
-                                                    value={searchQuery}
-                                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                                />
-                                                <button type="submit" className="header-search-icon">
-                                                    <i className="fal fa-search" />
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div className="header-meta header-brand d-flex align-items-center">
+                                <div className={`header-meta-info d-flex align-items-center ${hideSearchBar ? 'justify-content-end' : 'justify-content-between'}`}>
+                                    {!hideSearchBar && (
+                                        <div className="header-search-bar">
+                                            <form onSubmit={handleSearchSubmit}>
+                                                <div className="search-info p-relative">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Search products..."
+                                                        value={searchQuery}
+                                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                                    />
+                                                    <button type="submit" className="header-search-icon">
+                                                        <i className="fal fa-search" />
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    )}
+                                    <div className={`header-meta header-brand d-flex align-items-center justify-content-end ${hideSearchBar ? 'ml-auto' : ''}`}>
                                         <div className="header-meta__social d-flex align-items-center ml-25">
                                             <button
                                                 className="header-cart p-relative tp-cart-toggle"
@@ -167,13 +169,14 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                     </div>
                 </div>
             </header>
-            <HeaderSticky scroll={scroll} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />
+            <HeaderSticky scroll={scroll} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} />
             <HeaderTabSticky
                 scroll={scroll}
                 isMobileMenu={isMobileMenu}
                 handleMobileMenu={handleMobileMenu}
                 isCartSidebar={isCartSidebar}
                 handleCartSidebar={handleCartSidebar}
+                hideSearchBar={hideSearchBar}
             />
             <HeaderMobSticky
                 scroll={scroll}
@@ -181,6 +184,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                 handleMobileMenu={handleMobileMenu}
                 isCartSidebar={isCartSidebar}
                 handleCartSidebar={handleCartSidebar}
+                hideSearchBar={hideSearchBar}
             />
         </>
     )

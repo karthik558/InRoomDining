@@ -1,16 +1,14 @@
 'use client'
-import { addPrice } from "@/features/courseFilterSlice"
-import { priceCheck } from "@/features/courseSlice"
+import { addPrice } from "@/features/filterSlice"
 import { useDispatch, useSelector } from "react-redux"
 
 const PriceFilter = () => {
-    const { price } = useSelector((state) => state.course) || {}
+    const { price } = useSelector((state) => state.filter) || {}
     const dispatch = useDispatch()
 
-    // color handler
+    // price handler
     const priceHandler = (e, id) => {
         dispatch(addPrice(e.target.value))
-        dispatch(priceCheck(id))
     }
 
     return (

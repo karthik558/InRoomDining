@@ -1,0 +1,65 @@
+/* Additional fixes for header icon alignment */
+.header-meta-info.d-flex.align-items-center.justify-content-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end !important;
+  width: 100%;
+}
+
+/* Critical fix for header alignment on all pages */
+header .col-xl-10.col-lg-9 .header-meta-info {
+  justify-content: space-between !important;
+}
+
+header .col-xl-10.col-lg-9 .header-meta-info.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+/* Force right alignment for header icons */
+header .header-meta-info.justify-content-end .header-meta.header-brand {
+  margin-left: auto !important;
+}
+
+/* Fix for header icon spacing */
+.header-meta__social {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+/* Fix for header meta spacing when search bar is hidden */
+.header-meta.header-brand.d-flex.align-items-center.justify-content-end.ml-auto {
+  margin-left: auto !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: 100%;
+}
+
+/* Fix for header icon containers */
+.header-meta.header-brand .header-meta__social {
+  margin-left: 0 !important;
+}
+
+/* Specific fix for the sign-in page header icons */
+.col-xl-10.col-lg-9 .header-meta-info.justify-content-end .header-meta.ml-auto {
+  flex-grow: 0;
+  justify-content: flex-end !important;
+  margin-right: 15px;
+}
+
+/* Fix for spacing between icons */
+.header-meta__social.d-flex.align-items-center.ml-25 {
+  margin-left: 0 !important;
+}
+
+@media (min-width: 768px) {
+  /* Desktop header alignment fixes */
+  .col-xl-10.col-lg-9 .header-meta-info.d-flex.align-items-center.justify-content-end {
+    padding-right: 15px;
+  }
+  
+  /* Fix for right-side spacing */
+  .col-xl-10.col-lg-9 {
+    justify-content: flex-end;
+  }
+}

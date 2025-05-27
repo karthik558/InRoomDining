@@ -11,7 +11,7 @@ import Header1 from "./header/Header1"
 import Header2 from './header/Header2'
 import Header3 from "./header/Header3"
 
-export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, children }) {
+export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, children, hideSearchBar }) {
     const [scroll, setScroll] = useState(0)
     // Mobile Menu
     const [isMobileMenu, setMobileMenu] = useState(false)
@@ -39,10 +39,10 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
         <>
             {/* <PageHead headTitle={headTitle} /> */}
             <DataBg />
-            {!headerStyle && <Header1 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />}
-            {headerStyle == 1 ? <Header1 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} /> : null}
-            {headerStyle == 2 ? <Header2 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} /> : null}
-            {headerStyle == 3 ? <Header3 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} /> : null}
+            {!headerStyle && <Header1 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} />}
+            {headerStyle == 1 ? <Header1 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} /> : null}
+            {headerStyle == 2 ? <Header2 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} /> : null}
+            {headerStyle == 3 ? <Header3 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} /> : null}
             <Sidebar isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
             <HeaderCart isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />
             <main>
@@ -51,8 +51,6 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
                 {children}
             </main>
 
-            {!footerStyle && < Footer1 />}
-            {/* {footerStyle == 1 ? < Footer1 /> : null} */}
             {footerStyle == 2 ? < Footer2 /> : null}
 
             <BackToTop />

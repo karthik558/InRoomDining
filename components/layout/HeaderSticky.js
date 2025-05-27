@@ -5,7 +5,7 @@ import Link from "next/link"
 import CartShow from "../elements/CartShow"
 import WishListShow from "../elements/WishListShow"
 
-export default function HeaderSticky({ scroll, isCartSidebar, handleCartSidebar }) {
+export default function HeaderSticky({ scroll, isCartSidebar, handleCartSidebar, hideSearchBar }) {
     
     const router = useRouter()
     const [searchQuery, setSearchQuery] = useState("")
@@ -37,29 +37,33 @@ export default function HeaderSticky({ scroll, isCartSidebar, handleCartSidebar 
                                         <i className="fal fa-shopping-cart" />
                                         <CartShow />
                                     </button>
-                                    <Link href="/sign-in"><i className="fal fa-user" /></Link>
+                                    {!hideSearchBar && (
+                                        <Link href="/sign-in"><i className="fal fa-user" /></Link>
+                                    )}
                                     <Link href="/wishlist" className="header-cart p-relative tp-cart-toggle">
                                         <i className="fal fa-heart" />
                                         <WishListShow />
                                     </Link>
                                 </div>
-                                <div className="header-meta__search-5 ml-25">
-                                    <div className="header-search-bar-5">
-                                        <form onSubmit={handleSearchSubmit}>
-                                            <div className="search-info p-relative">
-                                                <input
-                                                    type="text"
-                                                    placeholder="Search products..."
-                                                    value={searchQuery}
-                                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                                />
-                                                <button type="submit" className="header-search-icon">
-                                                    <i className="fal fa-search" />
-                                                </button>
-                                            </div>
-                                        </form>
+                                {!hideSearchBar && (
+                                    <div className="header-meta__search-5 ml-25">
+                                        <div className="header-search-bar-5">
+                                            <form onSubmit={handleSearchSubmit}>
+                                                <div className="search-info p-relative">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Search products..."
+                                                        value={searchQuery}
+                                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                                    />
+                                                    <button type="submit" className="header-search-icon-5">
+                                                        <i className="fal fa-search" />
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </div>
                     </div>

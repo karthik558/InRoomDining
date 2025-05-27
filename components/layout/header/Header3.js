@@ -8,7 +8,7 @@ import HeaderMobSticky from "../HeaderMobSticky"
 import HeaderSticky from "../HeaderSticky"
 import HeaderTabSticky from "../HeaderTabSticky"
 
-export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar }) {
+export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar, hideSearchBar }) {
     const router = useRouter()
     const [isToggled, setToggled] = useState(false)
     const [searchQuery, setSearchQuery] = useState("")
@@ -36,31 +36,35 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                                 </div>
                             </div>
                             <div className="col-xl-10 col-lg-9">
-                                <div className="header-meta-info d-flex align-items-center justify-content-between">
-                                    <div className="header-search-bar">
-                                        <form onSubmit={handleSearchSubmit}>
-                                            <div className="search-info p-relative">
-                                                <input
-                                                    type="text"
-                                                    placeholder="Search products..."
-                                                    value={searchQuery}
-                                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                                />
-                                                <button type="submit" className="header-search-icon">
-                                                    <i className="fal fa-search" />
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div className="header-meta header-brand d-flex align-items-center">
+                                <div className={`header-meta-info d-flex align-items-center ${hideSearchBar ? 'justify-content-end' : 'justify-content-between'}`}>
+                                    {!hideSearchBar && (
+                                        <div className="header-search-bar">
+                                            <form onSubmit={handleSearchSubmit}>
+                                                <div className="search-info p-relative">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Search products..."
+                                                        value={searchQuery}
+                                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                                    />
+                                                    <button type="submit" className="header-search-icon">
+                                                        <i className="fal fa-search" />
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    )}
+                                    <div className={`header-meta header-brand d-flex align-items-center justify-content-end ${hideSearchBar ? 'ml-auto' : ''}`}>
                                         <div className="header-meta__social d-flex align-items-center ml-25">
-                                            <button className="header-cart p-relative tp-cart-toggle" onClick={handleCartSidebar}>
+                                            <button className="header-cart p-relative tp-cart-toggle" onClick={handleCartSidebar} style={{marginRight: '15px'}}>
                                                 <i className="fal fa-shopping-cart" />
                                                 <CartShow />
                                             </button>
-                                            <Link href="/sign-in">
-                                                <i className="fal fa-user" />
-                                            </Link>
+                                            {!hideSearchBar && (
+                                                <Link href="/sign-in" style={{marginRight: '15px'}}>
+                                                    <i className="fal fa-user" />
+                                                </Link>
+                                            )}
                                             <Link href="/wishlist" className="header-cart p-relative tp-cart-toggle">
                                                 <i className="fal fa-heart" />
                                                 <WishListShow />
@@ -73,9 +77,9 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                     </div>
                 </div>
             </header>
-            <HeaderSticky scroll={scroll} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />
-            <HeaderTabSticky scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />
-            <HeaderMobSticky scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />
+            <HeaderSticky scroll={scroll} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} />
+            <HeaderTabSticky scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} />
+            <HeaderMobSticky scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} hideSearchBar={hideSearchBar} />
         </>
     )
 }

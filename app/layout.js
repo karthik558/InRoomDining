@@ -14,6 +14,11 @@ import "/public/assets/css/magnific-popup.css"
 import "/public/assets/css/meanmenu.css"
 import "/public/assets/css/spacing.css"
 import "/public/assets/css/main.css"
+import "/public/assets/css/search-enhancements.css"
+import "/public/assets/css/header-alignment-fix.css"
+import "/public/assets/css/header-icon-fix.css"
+import "/public/assets/css/header-alignment-override.css"
+import "/public/assets/css/search-bar-spacing.css"
 const jost = Jost({
     weight: ['300', '400', '500', '600', '700'],
     subsets: ['latin'],

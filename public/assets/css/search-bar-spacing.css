@@ -1,0 +1,39 @@
+/* Additional spacing fixes for search bar and icons */
+
+/* Add margin to search bar container in all headers */
+.header-meta-info .header-search-bar {
+  margin-right: 35px;
+}
+
+/* Specific fix for header-meta__search-5 */
+.header-meta__search-5 {
+  margin-right: 25px;
+}
+
+/* Fix for spacing in header sticky */
+.logo-area .header-meta-info .header-meta__search-5 {
+  margin-right: 30px;
+}
+
+/* Fix for spacing in tablet header */
+@media (max-width: 991px) and (min-width: 768px) {
+  .header-meta-info .header-search-bar {
+    margin-right: 25px;
+  }
+}
+
+/* Add spacing between icons */
+.header-meta__social .header-cart,
+.header-meta__social a {
+  margin-right: 15px;
+}
+
+.header-meta__social .header-cart:last-child,
+.header-meta__social a:last-child {
+  margin-right: 0;
+}
+
+/* Ensure proper spacing when search bar is hidden */
+.header-meta-info.justify-content-end .header-meta.header-brand {
+  padding-right: 15px;
+}

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import CartShow from "../elements/CartShow"
 
-export default function HeaderMobSticky({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar }) {
+export default function HeaderMobSticky({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar, hideSearchBar }) {
     return (
         <>
             <div id="header-mob-sticky" className={`tp-md-lg-header d-md-none pt-20 pb-20 ${scroll ? "header-sticky" : ""}`}>
@@ -25,7 +25,9 @@ export default function HeaderMobSticky({ scroll, isMobileMenu, handleMobileMenu
                                             <i className="fal fa-shopping-cart" />
                                             <CartShow />
                                         </button>
-                                        <Link href="/sign-in"><i className="fal fa-user" /></Link>
+                                        {!hideSearchBar && (
+                                            <Link href="/sign-in"><i className="fal fa-user" /></Link>
+                                        )}
                                     </div>
                                 </div>
                             </div>

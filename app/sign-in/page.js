@@ -59,7 +59,7 @@ export default function SignIn() {
 
     return (
         <>
-            <Layout headerStyle={3} footerStyle={2} breadcrumbTitle="Admin Login">
+            <Layout headerStyle={3} footerStyle={2} hideSearchBar={true}>
                 <section className="signin-area" style={{
                     minHeight: '100vh',
                     background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',

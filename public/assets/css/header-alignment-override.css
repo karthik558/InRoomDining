@@ -1,0 +1,44 @@
+/* Header container alignment fixes for all pages */
+
+/* Fix for search-less headers (sign-in page) */
+.row.align-items-center .col-xl-10.col-lg-9 {
+  display: flex;
+}
+
+.row.align-items-center .col-xl-10.col-lg-9 .header-meta-info.justify-content-end {
+  display: flex;
+  justify-content: flex-end !important;
+  width: 100%;
+}
+
+/* Align icons to the right */
+.header-meta.header-brand.ml-auto,
+.header-meta.header-brand.d-flex.ml-auto,
+.header-meta.header-brand.d-flex.align-items-center.ml-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* Fix container width issues */
+.header-meta.header-brand.d-flex.align-items-center.justify-content-end.ml-auto {
+  flex: 0 0 auto;
+  width: auto !important;
+}
+
+/* Adjust spacing for all headers */
+.header-meta__social {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Override any conflicting styles */
+.header-meta-info.justify-content-between {
+  justify-content: space-between !important;
+}
+
+/* Mobile and tablet fixes */
+@media (max-width: 991px) {
+  .header-meta.header-brand.d-flex.align-items-center.justify-content-end.ml-auto {
+    margin-right: 10px !important;
+  }
+}

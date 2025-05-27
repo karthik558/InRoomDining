@@ -55,10 +55,7 @@ InRoomDining is a modern, full-featured e-commerce platform built with Next.js 1
 ### **Additional Libraries**
 - **PDF Generation**: html2pdf.js
 - **Notifications**: react-toastify
-- **Range Slider**: react-input-range
-- **Video Modal**: react-modal-video
 - **CSS Preprocessor**: Sass
-- **Communication**: Twilio integration
 
 ## 📂 Project Structure
 
@@ -180,23 +177,6 @@ npm run sass
 - **State Persistence**: Cart and wishlist data persist across browser sessions
 - **Responsive Design**: Optimized for mobile, tablet, and desktop
 - **SEO Optimized**: Built-in SEO features with Next.js metadata API
-
-## 🔧 Configuration
-
-### **Environment Variables**
-Create a `.env.local` file in the root directory:
-
-```env
-# Application settings
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-
-# Twilio configuration (if using SMS features)
-TWILIO_ACCOUNT_SID=your_twilio_sid
-TWILIO_AUTH_TOKEN=your_twilio_token
-
-# WhatsApp Business API (if applicable)
-WHATSAPP_PHONE_NUMBER=8129624036
-```
 
 ### **Customization**
 - **Styling**: Modify CSS files in `/public/assets/css/`

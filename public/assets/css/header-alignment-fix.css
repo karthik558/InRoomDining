@@ -1,0 +1,66 @@
+/* Header Icon Alignment Fix for Sign-in Page */
+.header-meta-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure proper width distribution when search bar is hidden */
+.header-meta-info .header-meta.header-brand.d-flex.ml-auto {
+  width: 100%;
+}
+
+/* When search bar is hidden (sign-in page) */
+.header-meta.header-brand.d-flex.ml-auto {
+  margin-left: auto !important;
+  justify-content: flex-end !important;
+}
+
+.header-meta.header-brand.d-flex.align-items-center.justify-content-end {
+  margin-left: auto !important;
+}
+
+.header-meta__social.d-flex.ml-auto {
+  margin-left: auto !important;
+  justify-content: flex-end !important;
+}
+
+/* Fix for header cart icon spacing when sign-in icon is hidden */
+.header-meta__social .header-cart {
+  margin-right: 5px;
+}
+
+/* Icon spacing on sign-in page */
+.header-meta__social.d-flex.ml-auto .header-cart {
+  margin-right: 10px;
+}
+
+/* Fix for container width and alignment across different screen sizes */
+.col-xl-10.col-lg-9 {
+  display: flex;
+}
+
+/* Ensure proper alignment when search bar is hidden */
+.header-meta-info.d-flex.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.header-meta-info.d-flex.justify-content-end .header-meta.header-brand {
+  margin-left: auto !important;
+}
+
+/* Remove padding on sign-in page for better alignment */
+.header-meta-info.d-flex .header-meta.ml-auto {
+  padding-right: 0;
+}
+
+/* Additional fix for proper alignment in mobile header */
+@media (max-width: 767px) {
+  .header-meta-info.d-flex.justify-content-end.ml-25 {
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+  }
+  
+  .col-3 .header-meta-info {
+    justify-content: flex-end !important;
+  }
+}
