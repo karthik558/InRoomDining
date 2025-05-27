@@ -19,6 +19,7 @@ import "/public/assets/css/header-alignment-fix.css"
 import "/public/assets/css/header-icon-fix.css"
 import "/public/assets/css/header-alignment-override.css"
 import "/public/assets/css/search-bar-spacing.css"
+import "/public/assets/css/testimonial-fix.css"
 const jost = Jost({
     weight: ['300', '400', '500', '600', '700'],
     subsets: ['latin'],

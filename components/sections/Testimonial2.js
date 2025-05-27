@@ -8,26 +8,33 @@ const swiperOptions = {
     slidesPerView: 3,
     spaceBetween: 30,
     autoplay: {
-        delay: 3000,
+        delay: 5000,
+        disableOnInteraction: false,
     },
     breakpoints: {
         1400: {
             slidesPerView: 3,
+            spaceBetween: 30,
         },
         1200: {
             slidesPerView: 3,
+            spaceBetween: 30,
         },
         992: {
-            slidesPerView: 3,
+            slidesPerView: 2,
+            spaceBetween: 25,
         },
         768: {
             slidesPerView: 2,
+            spaceBetween: 20,
         },
         576: {
             slidesPerView: 1,
+            spaceBetween: 0,
         },
         0: {
             slidesPerView: 1,
+            spaceBetween: 0,
         },
     },
     // Navigation arrows
@@ -60,10 +67,10 @@ export default function Testimonial2() {
                             {testimonials.map((testimonial, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="tptesti text-center">
-                                        <div className="tptesti__icon mb-25">
+                                        <div className="tptesti__icon">
                                             <img src={testimonial.icon} alt="" className="fn__svg" />
                                         </div>
-                                        <div className="tptesti__content pb-5">
+                                        <div className="tptesti__content">
                                             <p>{testimonial.text}</p>
                                         </div>
                                         <div className="tptesti__avata d-flex align-items-center justify-content-center">
