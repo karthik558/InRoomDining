@@ -14,6 +14,7 @@ import {
 import { clearCategoryToggle } from "../../features/productSlice"
 import ShopCard from "./ShopCard"
 import ShopCardList from "./ShopCardList"
+import "../../public/assets/css/filter-buttons-spacing.css"
 
 // Accepts an optional "query" prop for filtering items by search term.
 const FilterShopBox = ({ query = "" }) => {
@@ -99,7 +100,7 @@ const FilterShopBox = ({ query = "" }) => {
 
     // clearAll now resets filters and also clears the search query from the URL.
     const clearAll = () => {
-        dispatch(addprice({ min: 0, max: 100 }))
+        // Don't reset the price range
         dispatch(clearCategory())
         dispatch(clearCategoryToggle())
         dispatch(addSort(""))
