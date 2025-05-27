@@ -32,22 +32,22 @@ export default function Product1() {
                     </div>
                     <div className="tab-content" id="nav-tabContent">
                         <div className={activeIndex == 1 ? "tab-pane fade show active" : "tab-pane fade"} id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
-                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-2">
                                 <FilterShopBox2 itemStart={0} itemEnd={10} />
                             </div>
                         </div>
                         <div className={activeIndex == 2 ? "tab-pane fade show active" : "tab-pane fade"} id="nav-popular" role="tabpanel" aria-labelledby="nav-popular-tab">
-                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-2">
                                 <FilterShopBox2 itemStart={10} itemEnd={20} />
                             </div>
                         </div>
                         <div className={activeIndex == 3 ? "tab-pane fade show active" : "tab-pane fade"} id="nav-sale" role="tabpanel" aria-labelledby="nav-sale-tab">
-                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-2">
                                 <FilterShopBox2 itemStart={20} itemEnd={30} />
                             </div>
                         </div>
                         <div className={activeIndex == 4 ? "tab-pane fade show active" : "tab-pane fade"} id="nav-rate" role="tabpanel" aria-labelledby="nav-rate-tab">
-                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                            <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-2">
                                 <FilterShopBox2 itemStart={15} itemEnd={25} />
                             </div>
                         </div>

@@ -1,0 +1,51 @@
+.product-sidebar .form-check {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.product-sidebar .form-check-input {
+  width: 16px;
+  height: 16px;
+  margin-top: 0;
+  margin-right: 8px;
+  border: 1px solid var(--tp-border-3);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.product-sidebar .form-check-input[type="checkbox"] {
+  border-radius: 3px;
+}
+
+.product-sidebar .form-check-input:checked {
+  background-color: var(--tp-text-primary);
+  border-color: var(--tp-text-primary);
+}
+
+.product-sidebar .form-check-label {
+  color: var(--tp-text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.product-sidebar .form-check-input:checked + .form-check-label {
+  color: var(--tp-text-body);
+}
+
+.product-sidebar .form-check-input:focus {
+  box-shadow: none;
+  border-color: var(--tp-text-primary);
+}
+
+/* Hover states */
+.product-sidebar .form-check:hover .form-check-input {
+  border-color: var(--tp-text-primary);
+}
+
+.product-sidebar .form-check:hover .form-check-label {
+  color: var(--tp-text-body);
+}

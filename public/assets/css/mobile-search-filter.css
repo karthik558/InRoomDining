@@ -1,0 +1,212 @@
+/* Enhanced mobile filter styling */
+/* Mobile search bar */
+.mobile-search-bar {
+  margin-bottom: 15px;
+  padding: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(120, 38, 113, 0.1);
+}
+
+.mobile-search-input {
+  position: relative;
+  width: 100%;
+  padding: 8px;
+}
+
+.mobile-search-input input {
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  border: 1px solid rgba(120, 38, 113, 0.15);
+  padding: 10px 45px 10px 15px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.mobile-search-input input:focus {
+  border-color: #782671;
+  box-shadow: 0 2px 10px rgba(120, 38, 113, 0.15);
+  outline: none;
+}
+
+.mobile-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #782671;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Mobile filters styling */
+.mobile-filters-wrapper {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(120, 38, 113, 0.1);
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.mobile-filters-wrapper:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: rgba(120, 38, 113, 0.2);
+}
+
+.mobile-filters-wrapper .product-sidebar {
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.filter-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(120, 38, 113, 0.1);
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  margin: -15px -15px 15px -15px;
+}
+
+.filter-header h3 {
+  font-size: 16px;
+  color: #782671;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-header h3:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background: #782671;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.mobile-filters-wrapper .product-sidebar__widget {
+  padding: 15px;
+  margin: 0 -15px;
+  border-bottom: 1px solid rgba(120, 38, 113, 0.08);
+  background: #fafbfc;
+  transition: all 0.3s ease;
+}
+
+.mobile-filters-wrapper .product-sidebar__widget:last-child {
+  margin-bottom: -15px;
+  border-bottom: none;
+  border-radius: 0 0 12px 12px;
+  padding-bottom: 20px;
+}
+
+.mobile-filters-wrapper .product-sidebar__widget:hover {
+  background: #f8f9fa;
+}
+
+.mobile-filters-wrapper .product-sidebar__title {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .product-area {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+  
+  .mobile-filters-wrapper .product-sidebar__widget {
+    padding-bottom: 15px;
+  }
+  
+  .mobile-filters-wrapper .product-sidebar__info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Important override to ensure filters are never shown at bottom on mobile */
+  .col-lg-3.col-md-12 .tpsidebar.product-sidebar__product-category {
+    display: none !important;
+  }
+  
+  /* Ensure proper spacing between elements */
+  .mobile-search-bar + .mobile-filters-wrapper {
+    margin-top: 12px;
+  }
+  
+  /* Better product grid spacing after filters */
+  .mobile-filters-wrapper + .row {
+    margin-top: -5px;
+  }
+  
+  /* Adjust product sorting area on mobile */
+  .product-filter-content {
+    margin: 0 -5px 20px -5px;
+    padding: 12px;
+  }
+  
+  /* Enhance price range slider on mobile */
+  .mobile-filters-wrapper .ui-widget.ui-widget-content {
+    height: 4px !important;
+    background: #e5e7eb !important;
+    border: none !important;
+    margin: 10px 5px !important;
+  }
+  
+  .mobile-filters-wrapper .ui-slider-range {
+    background: #782671 !important;
+    border: none !important;
+  }
+  
+  .mobile-filters-wrapper .ui-slider .ui-slider-handle {
+    width: 18px !important;
+    height: 18px !important;
+    top: -7px !important;
+    background: white !important;
+    border: 2px solid #782671 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    cursor: pointer !important;
+    margin-left: -9px !important;
+    border-radius: 50% !important;
+  }
+  
+  /* Improve category checkboxes */
+  .mobile-filters-wrapper .product-sidebar__info .form-check {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-filters-wrapper .product-sidebar__info .form-check input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    border-color: rgba(120, 38, 113, 0.3);
+    cursor: pointer;
+  }
+  
+  .mobile-filters-wrapper .product-sidebar__info .form-check label {
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    user-select: none;
+  }
+}

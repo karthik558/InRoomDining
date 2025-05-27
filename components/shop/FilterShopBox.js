@@ -63,14 +63,9 @@ const FilterShopBox = ({ query = "" }) => {
     // Use slice with undefined as end to show all items by default when perPage.end is 0.
     const sliceEnd = perPage.end !== 0 ? perPage.end : undefined
 
-    // Updated scrollable container style to improve scrolling behavior.
+    // Removed fixed height scrollable container style to improve layout flow
     const scrollableContainerStyle = {
-        maxHeight: '600px',
-        overflowY: 'auto',
-        overflowX: 'hidden',
-        WebkitOverflowScrolling: 'touch', // Smooth scrolling on iOS devices
-        scrollBehavior: 'smooth',
-        paddingRight: '15px'
+        // Empty style object - our CSS will handle the layout properly
     }
 
     // Apply all filters including the search query.
@@ -136,8 +131,7 @@ const FilterShopBox = ({ query = "" }) => {
                                     query.trim()) && (
                                         <button
                                             onClick={clearAll}
-                                            className="btn btn-danger text-nowrap me-2"
-                                            style={{ minHeight: "45px", marginBottom: "15px" }}
+                                            className="btn btn-danger text-nowrap filter-clear-btn"
                                         >
                                             Clear All
                                         </button>
@@ -195,6 +189,31 @@ const FilterShopBox = ({ query = "" }) => {
                 </div>
             </div>
 
+            <div className="product-view-tabs mb-20">
+                <div className="d-flex justify-content-start">
+                    <ul className="nav nav-tabs product-tabs" role="tablist">
+                        <li className="nav-item" role="presentation">
+                            <button 
+                                className={`nav-link ${activeIndex === 1 ? 'active' : ''}`}
+                                onClick={() => handleOnClick(1)}
+                                aria-selected={activeIndex === 1}
+                            >
+                                <i className="far fa-list mr-5"></i> List View
+                            </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                            <button 
+                                className={`nav-link ${activeIndex === 2 ? 'active' : ''}`}
+                                onClick={() => handleOnClick(2)}
+                                aria-selected={activeIndex === 2}
+                            >
+                                <i className="far fa-th-large mr-5"></i> Grid View
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
             <div className="row mb-50">
                 <div className="col-lg-12">
                     <div className="tab-content" id="nav-tabContent">
@@ -230,7 +249,7 @@ const FilterShopBox = ({ query = "" }) => {
                                     : "tab-pane fade"
                             }
                         >
-                            <div className="row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 tpproduct" style={scrollableContainerStyle}>
+                            <div className="row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-2 tpproduct" style={scrollableContainerStyle}>
                                 {products
                                     ?.filter(priceFilter)
                                     ?.filter(categoryFilter)

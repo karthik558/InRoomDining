@@ -1,0 +1,85 @@
+/* Shop page final polish and tweaks */
+
+/* Improve overall page spacing */
+.product-area {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 767px) {
+  .product-area {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* Add subtle animation to product cards */
+.tpproduct .col {
+  transition: transform 0.3s ease;
+}
+
+.tpproduct .col:hover {
+  transform: translateY(-5px);
+}
+
+/* Ensure proper spacing between elements */
+.product-view-tabs {
+  margin-top: 20px;
+}
+
+/* Empty results styling */
+.no-results-message {
+  text-align: center;
+  padding: 40px 0;
+  color: #666;
+}
+
+.no-results-message i {
+  font-size: 40px;
+  color: #ccc;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Loading state styling */
+.product-loading {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.product-loading .spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(120, 38, 113, 0.1);
+  border-radius: 50%;
+  border-top-color: #782671;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Breadcrumb enhancement */
+.breadcrumb-bg {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+}
+
+/* Better bottom spacing on mobile */
+@media (max-width: 767px) {
+  .product-area {
+    padding-bottom: 40px;
+  }
+  
+  .row-cols-2 {
+    margin-bottom: 10px;
+  }
+}

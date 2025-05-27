@@ -1,0 +1,138 @@
+/* 
+   Shop Card Improvements
+   This CSS file provides consistent styling for product cards on the shop page
+*/
+
+/* Fix product card height and alignment */
+.tpproduct .col .tpproduct__thumb {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(120, 38, 113, 0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.tpproduct .col .tpproduct__thumb img {
+  max-height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tpproduct .col:hover .tpproduct__thumb {
+  border-color: rgba(120, 38, 113, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tpproduct .col:hover .tpproduct__thumb img {
+  transform: scale(1.05);
+}
+
+/* Consistent product information styling */
+.tpproduct__content {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.tpproduct__content h4 {
+  margin-bottom: 8px;
+  height: 44px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.tpproduct__price {
+  font-weight: 600;
+  font-size: 16px;
+  color: #782671;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Better product action buttons */
+.tpproduct__shopping {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.tpproduct__shopping a,
+.tpproduct__shopping button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5 !important;
+  color: #782671 !important;
+  border: 1px solid rgba(120, 38, 113, 0.1) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tpproduct__shopping a:hover,
+.tpproduct__shopping button:hover {
+  background-color: #782671 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(120, 38, 113, 0.2) !important;
+}
+
+/* Consistency with filter buttons */
+.product-navtabs .nav-link,
+.product-tabs .nav-link {
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  padding: 8px 15px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+  cursor: pointer;
+}
+
+.product-navtabs .nav-link:hover,
+.product-navtabs .nav-link.active,
+.product-tabs .nav-link:hover,
+.product-tabs .nav-link.active {
+  background: #782671;
+  border-color: #782671;
+  color: white;
+}
+
+/* View switching tabs */
+.product-view-tabs {
+  border-bottom: 1px solid #e1e5e9;
+  padding-bottom: 15px;
+}
+
+.product-tabs {
+  border: none;
+}
+
+.product-tabs .nav-link i {
+  margin-right: 5px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}

@@ -1,0 +1,25 @@
+/* Price range display improvements */
+.mobile-filters-wrapper .price-filter p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 5px 5px;
+  padding: 0 5px;
+}
+
+.mobile-filters-wrapper .price-filter input {
+  width: 70px !important;
+  text-align: center;
+  border: none;
+  background: transparent !important;
+  color: #782671 !important;
+  font-weight: 600;
+  font-size: 14px !important;
+  padding: 5px !important;
+}
+
+.mobile-filters-wrapper .price-filter span {
+  color: #666;
+  padding: 0 5px;
+  font-size: 14px;
+}

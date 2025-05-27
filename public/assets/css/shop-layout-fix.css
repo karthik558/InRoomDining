@@ -1,0 +1,234 @@
+/* 
+   Shop Layout Improvements 
+   This CSS file fixes the layout issues on the shop page
+   and makes the filtering options more consistent
+*/
+
+/* Fix the page structure and sidebar behavior */
+.tpsidebar.product-sidebar__product-category {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 38, 113, 0.5) rgba(120, 38, 113, 0.1);
+}
+
+.tpsidebar.product-sidebar__product-category::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tpsidebar.product-sidebar__product-category::-webkit-scrollbar-track {
+  background: rgba(120, 38, 113, 0.1);
+  border-radius: 10px;
+}
+
+.tpsidebar.product-sidebar__product-category::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 38, 113, 0.5);
+  border-radius: 10px;
+}
+
+/* Improve the product display area */
+.tpproduct[style] {
+  max-height: none !important;
+  overflow-y: visible !important;
+  padding-right: 0 !important;
+}
+
+/* Improve product card spacing */
+.tpproduct .col-lg-3,
+.tpproduct .col-md-3,
+.tpproduct .col-sm-2,
+.tpproduct .col-xxl-4,
+.tpproduct .col-xl-4 {
+  margin-bottom: 25px;
+}
+
+/* Better product list flow */
+.tab-pane > div {
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* Fix filter buttons and dropdowns */
+.product-navtabs .tp-shop-selector {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Improve filter header section */
+.product-filter-content {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Improve Clear All button */
+.tp-shop-selector .btn-danger,
+.filter-clear-btn {
+  height: 38px !important;
+  line-height: 1;
+  padding: 0 15px !important;
+  font-size: 14px !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 6px !important;
+  margin-right: 10px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #782671 !important;
+  border-color: #782671 !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(120, 38, 113, 0.2);
+}
+
+.tp-shop-selector .btn-danger:hover,
+.filter-clear-btn:hover {
+  background-color: #9c4a8a !important;
+  border-color: #9c4a8a !important;
+  box-shadow: 0 4px 8px rgba(120, 38, 113, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Style dropdowns consistently */
+.tp-shop-selector .chosen-single,
+.tp-shop-selector .form-select {
+  height: 38px !important;
+  font-size: 14px !important;
+  border: 1px solid #e1e5e9 !important;
+  border-radius: 6px !important;
+  background-color: #fafbfc !important;
+  max-width: 160px;
+  padding: 0.375rem 0.75rem !important;
+  transition: all 0.3s ease;
+}
+
+.tp-shop-selector .chosen-single:focus,
+.tp-shop-selector .form-select:focus {
+  border-color: #782671 !important;
+  box-shadow: 0 0 0 3px rgba(120, 38, 113, 0.1);
+}
+
+/* Ensure consistent spacing */
+.tp-shop-selector .form-select {
+  margin-bottom: 0;
+  margin-left: 10px !important;
+}
+
+/* Make dropdown arrows consistent */
+.tp-shop-selector .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23782671' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.75rem center !important;
+  background-size: 16px 12px !important;
+  appearance: none;
+}
+
+/* Fix filter area spacing */
+.product-filter-content {
+  margin-bottom: 20px !important;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+/* Responsive fixes */
+@media (max-width: 767px) {
+  .product-navtabs {
+    margin-top: 15px;
+  }
+  
+  .tp-shop-selector {
+    justify-content: flex-start !important;
+  }
+  
+  .product-sidebar__product-category {
+    margin-top: 30px;
+  }
+  
+  /* Improved mobile product card styling */
+  .row-cols-2 > * {
+    padding: 0 8px;
+  }
+  
+  .tpproduct .tpproduct__thumb {
+    height: 160px;
+  }
+  
+  .tpproduct .tpproduct__thumb img {
+    max-height: 140px;
+  }
+  
+  .tpproduct__shopping {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tpproduct__content h4 {
+    font-size: 14px;
+    height: 38px;
+    margin-bottom: 5px;
+  }
+  
+  .tpproduct__content .tpproduct__price {
+    font-size: 15px;
+  }
+}
+
+/* Fix main content area for better flow */
+.product-sidebar__product-item {
+  width: 100%;
+}
+
+/* Ensure sidebar has proper spacing on mobile */
+@media (max-width: 991px) {
+  .tpsidebar.product-sidebar__product-category {
+    position: static;
+    max-height: none;
+    margin-top: 40px;
+  }
+}
+
+/* Product sidebar styling improvements */
+.product-sidebar__widget {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  border: 1px solid rgba(225, 229, 233, 0.5);
+}
+
+.product-sidebar__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #782671;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(120, 38, 113, 0.1);
+}
+
+/* Product count badge */
+.product-item-count {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+.product-item-count span {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-item-count span b {
+  color: #782671;
+  font-weight: 600;
+}

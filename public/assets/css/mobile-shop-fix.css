@@ -1,0 +1,123 @@
+/* Mobile-specific shop improvements */
+
+/* Ensure two columns work properly in grid view */
+.row-cols-2 {
+  --bs-gutter-x: 12px;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+/* Container padding for mobile */
+@media (max-width: 767px) {
+  .product-area .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Fix product card styling on small screens */
+@media (max-width: 575px) {
+  /* Better spacing for two columns */
+  .row-cols-2 > * {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* Container adjustments */
+  .product-area > .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Smaller product cards */
+  .tpproduct .col .tpproduct__thumb {
+    height: 140px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .tpproduct .col .tpproduct__thumb img {
+    max-height: 120px;
+    padding: 5px;
+  }
+  
+  /* Smaller text for product names */
+  .tpproduct__content h4 {
+    font-size: 12px;
+    height: 36px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    margin-bottom: 2px;
+  }
+  
+  /* Adjust price display */
+  .tpproduct__content .tpproduct__price {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Simplify action buttons */
+  .tpproduct__shopping {
+    gap: 3px;
+  }
+  
+  .tpproduct__shopping a,
+  .tpproduct__shopping button {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  /* Filter buttons */
+  .tp-shop-selector button,
+  .tp-shop-selector select {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 13px !important;
+  }
+  
+  /* Make sure view tabs are visible */
+  .product-tabs .nav-link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Optimize layout for phone-sized screens */
+@media (max-width: 400px) {
+  .product-filter-content .row {
+    margin-bottom: 10px;
+  }
+  
+  .product-item-count {
+    margin-bottom: 10px;
+  }
+  
+  /* Further optimize for very small screens */
+  .tpproduct__content h4 {
+    font-size: 11px;
+    height: 32px;
+  }
+  
+  .row-cols-2 > * {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+  
+  .tpproduct .col {
+    margin-bottom: 12px;
+  }
+}
+
+/* Fix sidebar display on mobile */
+@media (max-width: 991px) {
+  .row > .col-lg-3 {
+    order: 2;
+  }
+  
+  .row > .col-lg-9 {
+    order: 1;
+  }
+}

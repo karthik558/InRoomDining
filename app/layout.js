@@ -22,6 +22,15 @@ import "/public/assets/css/search-bar-spacing.css"
 import "/public/assets/css/testimonial-fix.css"
 import "/public/assets/css/signin-optimized.css"
 import "/public/assets/css/admin-performance.css"
+import "/public/assets/css/shop-layout-fix.css"
+import "/public/assets/css/shop-card-fix.css"
+import "/public/assets/css/price-slider-fix.css"
+import "/public/assets/css/mobile-shop-fix.css"
+import "/public/assets/css/view-tabs-fix.css"
+import "/public/assets/css/sidebar-filter-fix.css"
+import "/public/assets/css/shop-polish.css"
+import "/public/assets/css/mobile-search-filter.css"
+import "/public/assets/css/price-display-fix.css"
 const jost = Jost({
     weight: ['300', '400', '500', '600', '700'],
     subsets: ['latin'],

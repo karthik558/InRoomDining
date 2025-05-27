@@ -1,0 +1,72 @@
+/* Sidebar styling improvements for the shop page */
+
+.product-sidebar {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  border: 1px solid rgba(120, 38, 113, 0.1);
+}
+
+.product-sidebar__widget {
+  padding: 20px;
+  border-bottom: 1px solid rgba(120, 38, 113, 0.1);
+}
+
+.product-sidebar__widget:last-child {
+  border-bottom: none;
+}
+
+.product-sidebar__title {
+  color: #782671;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.product-sidebar__title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #782671;
+  border-radius: 2px;
+}
+
+/* Category styling */
+.product-sidebar__info ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-sidebar__info ul li {
+  margin-bottom: 10px;
+}
+
+.product-sidebar__info ul li:last-child {
+  margin-bottom: 0;
+}
+
+.product-sidebar__info ul li label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.product-sidebar__info ul li label:hover {
+  color: #782671;
+}
+
+.product-sidebar__info input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #782671;
+}
