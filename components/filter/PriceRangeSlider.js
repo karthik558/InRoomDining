@@ -31,14 +31,17 @@ const PriceRangeSlider = () => {
             <InputRange
                 formatLabel={(value) => ``}
                 minValue={0}
-                maxValue={2500}
+                maxValue={2000}
                 value={{ min: price.min, max: price.max }}
                 onChange={(value) => handleOnChange(value)}
             />
 
-            <div className="input-outer">
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
                 <div className="amount-outer">
-                    <span className="area-amount">{price.max}₹</span>
+                    <span className="area-amount">₹{price.min}</span>
+                </div>
+                <div className="amount-outer">
+                    <span className="area-amount">₹{price.max}</span>
                 </div>
             </div>
         </div>

@@ -1,51 +1,257 @@
-.product-sidebar .form-check {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+/* 
+ * Category Checkbox - Complete Modern Redesign with Ultra-High Specificity
+ * Targeting the exact HTML structure in FilterSidebar
+ * Maximum specificity to override ALL conflicting styles including main.css
+ */
+
+/* Target the form-check container with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check {
+  margin-bottom: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  position: relative !important;
+  min-height: 22px !important;
+  clear: both !important;
+  line-height: 1 !important;
 }
 
-.product-sidebar .form-check-input {
-  width: 16px;
-  height: 16px;
-  margin-top: 0;
-  margin-right: 8px;
-  border: 1px solid var(--tp-border-3);
-  cursor: pointer;
-  position: relative;
-  transition: all 0.2s ease;
+/* Complete checkbox input reset with ULTRA-HIGH specificity to override main.css */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input {
+  /* Reset ALL browser defaults with maximum priority */
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  
+  /* Positioning and dimensions - Override main.css 10px x 10px */
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  
+  /* Margin and positioning - Override main.css margin-left: -8px */
+  margin: 0 12px 0 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  position: relative !important;
+  
+  /* Visual styling - Override main.css background-color: #e3e3e3 */
+  background: #fff !important;
+  background-color: #fff !important;
+  border: 2px solid #ddd !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  
+  /* Remove all conflicting background properties */
+  background-image: none !important;
+  background-size: 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  
+  /* Remove shadows and outlines */
+  box-shadow: none !important;
+  outline: none !important;
+  
+  /* CRITICAL: Override main.css transform: translateY(4px) - This was causing misalignment */
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  
+  /* Reset any top/left positioning */
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  
+  /* Smooth transitions */
+  transition: all 0.2s ease !important;
+  
+  /* Z-index for proper layering */
+  z-index: 1 !important;
+  
+  /* Ensure proper display */
+  display: inline-block !important;
+  vertical-align: top !important;
 }
 
-.product-sidebar .form-check-input[type="checkbox"] {
-  border-radius: 3px;
+/* Remove ALL conflicting pseudo-elements with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input::before,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input::after,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input::before,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input::after {
+  content: none !important;
+  display: none !important;
 }
 
-.product-sidebar .form-check-input:checked {
-  background-color: var(--tp-text-primary);
-  border-color: var(--tp-text-primary);
+/* Checked state styling with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input:checked,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:checked {
+  background-color: #782671 !important;
+  background: #782671 !important;
+  border-color: #782671 !important;
+  background-image: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
 }
 
-.product-sidebar .form-check-label {
-  color: var(--tp-text-secondary);
-  cursor: pointer;
-  font-size: 14px;
-  user-select: none;
-  transition: color 0.2s ease;
+/* Custom checkmark for checked state with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input:checked::after,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:checked::after {
+  content: "✓" !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  /* Absolute positioning within checkbox */
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  
+  /* Checkmark styling */
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
+  
+  /* Reset any inherited styles */
+  border: none !important;
+  background: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  z-index: 2 !important;
 }
 
-.product-sidebar .form-check-input:checked + .form-check-label {
-  color: var(--tp-text-body);
+/* Label styling with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-label {
+  color: #555 !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  user-select: none !important;
+  transition: color 0.2s ease !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  vertical-align: middle !important;
+  display: inline-block !important;
 }
 
-.product-sidebar .form-check-input:focus {
-  box-shadow: none;
-  border-color: var(--tp-text-primary);
+/* Label styling when checkbox is checked with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input:checked + .form-check-label,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:checked + .form-check-label {
+  color: #333 !important;
+  font-weight: 500 !important;
 }
 
-/* Hover states */
-.product-sidebar .form-check:hover .form-check-input {
-  border-color: var(--tp-text-primary);
+/* Focus state styling with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input:focus,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(120, 38, 113, 0.2) !important;
+  border-color: #782671 !important;
+  outline: none !important;
 }
 
-.product-sidebar .form-check:hover .form-check-label {
-  color: var(--tp-text-body);
+/* Hover state styling with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check:hover .form-check-input,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check:hover input[type="checkbox"].form-check-input {
+  border-color: #782671 !important;
+}
+
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check:hover .form-check-label {
+  color: #333 !important;
+}
+
+/* Additional type specificity override with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input[type="checkbox"],
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input {
+  border-radius: 4px !important;
+  background-color: #fff !important;
+  background: #fff !important;
+  border: 2px solid #ddd !important;
+  width: 20px !important;
+  height: 20px !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  margin: 0 12px 0 0 !important;
+}
+
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input[type="checkbox"]:checked,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:checked {
+  background-color: #782671 !important;
+  background: #782671 !important;
+  border-color: #782671 !important;
+  background-image: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+}
+
+/* Ensure no other pseudo-elements interfere with ultra-high specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input:checked::before,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:checked::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Mobile optimization with ultra-high specificity */
+@media (max-width: 767px) {
+  .product-sidebar .product-sidebar__widget .product-sidebar__info .form-check {
+    margin-bottom: 14px !important;
+    min-height: 24px !important;
+  }
+  
+  .product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input,
+  .product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input {
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 12px !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+  }
+  
+  .product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input:checked::after,
+  .product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"].form-check-input:checked::after {
+    font-size: 16px !important;
+  }
+  
+  .product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-label {
+    font-size: 15px !important;
+  }
+}
+
+/* Override any remaining main.css conflicts with maximum specificity */
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check .form-check-input,
+.product-sidebar .product-sidebar__widget .product-sidebar__info .form-check input[type="checkbox"] {
+  /* Force override main.css styles */
+  height: 20px !important;
+  width: 20px !important;
+  background-color: #fff !important;
+  transform: none !important;
+  margin-left: 0 !important;
+  border-radius: 4px !important;
+  border: 2px solid #ddd !important;
 }

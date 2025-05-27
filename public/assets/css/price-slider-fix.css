@@ -1,45 +1,132 @@
-/* Price Range Slider Improvements */
-.product-sidebar .ui-widget.ui-widget-content {
-  border: 0 !important;
+/* Price Range Slider - React Input Range Styling with High Specificity */
+.product-sidebar .range-slider-one {
+  position: relative !important;
+  padding: 0 !important;
+  margin: 20px 0 40px !important;
+}
+
+/* Override default React Input Range styles with high specificity */
+.product-sidebar .range-slider-one .input-range {
   height: 4px !important;
-  background: #e1e5e9 !important;
+  width: 100% !important;
+  margin: 20px 0 30px !important;
+  position: relative !important;
+}
+
+.product-sidebar .range-slider-one .input-range__track {
+  background-color: #e1e5e9 !important;
   border-radius: 2px !important;
+  cursor: pointer !important;
+  height: 4px !important;
+  position: relative !important;
+  width: 100% !important;
+  border: none !important;
+  margin: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
 }
 
-.product-sidebar .ui-slider-horizontal .ui-slider-range {
-  background: #782671 !important;
+.product-sidebar .range-slider-one .input-range__track--active {
+  background-color: #782671 !important;
   height: 4px !important;
 }
 
-.product-sidebar .ui-slider .ui-slider-handle {
-  width: 16px !important;
-  height: 16px !important;
-  border-radius: 50% !important;
-  background: white !important;
+.product-sidebar .range-slider-one .input-range__slider {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: #fff !important;
   border: 2px solid #782671 !important;
+  border-radius: 50% !important;
   cursor: pointer !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) !important;
+  display: block !important;
+  height: 18px !important;
+  width: 18px !important;
+  margin-left: -9px !important;
+  margin-top: -7px !important;
   outline: none !important;
-  top: -6px !important;
+  position: absolute !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease !important;
+  top: 50% !important;
+  left: 50% !important;
+  z-index: 2 !important;
 }
 
-.product-sidebar .ui-slider .ui-slider-handle:hover,
-.product-sidebar .ui-slider .ui-slider-handle:active {
-  background: #782671 !important;
-  border-color: #782671 !important;
+.product-sidebar .range-slider-one .input-range__slider:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25) !important;
+  transform: scale(1.1) !important;
 }
 
-.product-sidebar .price-filter p {
-  margin-top: 15px !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.product-sidebar .range-slider-one .input-range__slider:active {
+  background-color: #782671 !important;
+  transform: scale(1.15) !important;
 }
 
-.product-sidebar .price-filter input {
-  background: transparent !important;
-  color: #782671 !important;
-  font-weight: 600 !important;
-  width: 70px !important;
+.product-sidebar .range-slider-one .input-range__slider:focus {
+  box-shadow: 0 0 0 3px rgba(120, 38, 113, 0.2) !important;
+  outline: none !important;
+}
+
+/* Hide default labels with high specificity */
+.product-sidebar .range-slider-one .input-range__label {
+  display: none !important;
+}
+
+.product-sidebar .range-slider-one .input-range__label-container {
+  display: none !important;
+}
+
+/* Price display styling with high specificity */
+.product-sidebar .range-slider-one > div[style] {
+  gap: 10px !important;
+}
+
+.product-sidebar .range-slider-one .amount-outer {
+  background-color: #f8f9fa !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 15px !important;
+  padding: 6px 12px !important;
+  min-width: 60px !important;
   text-align: center !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.product-sidebar .range-slider-one .amount-outer:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) !important;
+  border-color: #dee2e6 !important;
+}
+
+.product-sidebar .range-slider-one .area-amount {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #782671 !important;
+  margin: 0 !important;
+}
+
+/* Responsive adjustments with high specificity */
+@media (max-width: 767px) {
+  .product-sidebar .range-slider-one {
+    margin: 15px 0 35px !important;
+  }
+  
+  .product-sidebar .range-slider-one .amount-outer {
+    padding: 5px 10px !important;
+    min-width: 55px !important;
+  }
+  
+  .product-sidebar .range-slider-one .area-amount {
+    font-size: 12px !important;
+  }
+  
+  .product-sidebar .range-slider-one .input-range__slider {
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: -8px !important;
+    margin-top: -6px !important;
+  }
 }

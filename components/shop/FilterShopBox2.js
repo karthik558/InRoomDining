@@ -37,9 +37,12 @@ const FilterShopBox2 = ({ itemStart, itemEnd }) => {
     }
 
 
-    // location filter
-    const priceFilter = (item) =>
-        item?.price?.min >= price?.min && item?.price?.max <= price?.max
+    // price filter - Fixed to properly filter by product price
+    const priceFilter = (item) => {
+        // The actual product price is stored in item.price.max
+        const productPrice = item?.price?.max || 0
+        return productPrice >= price?.min && productPrice <= price?.max
+    }
 
     // // product-type filter
 
@@ -77,7 +80,7 @@ const FilterShopBox2 = ({ itemStart, itemEnd }) => {
 
     // clear all filters
     const clearAll = () => {
-        dispatch(addprice({ min: 0, max: 100 }))
+        dispatch(addprice({ min: 0, max: 2000 }))
 
 
 

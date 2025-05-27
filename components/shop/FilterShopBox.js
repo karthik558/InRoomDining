@@ -38,9 +38,12 @@ const FilterShopBox = ({ query = "" }) => {
         setActiveIndex(index)
     }
 
-    // Filter functions
-    const priceFilter = (item) =>
-        item?.price?.min >= price?.min && item?.price?.max <= price?.max
+    // Filter functions - Fixed to properly filter by product price
+    const priceFilter = (item) => {
+        // The actual product price is stored in item.price.max
+        const productPrice = item?.price?.max || 0
+        return productPrice >= price?.min && productPrice <= price?.max
+    }
 
     const categoryFilter = (item) =>
         category?.length !== 0 && item?.category !== undefined
@@ -100,7 +103,8 @@ const FilterShopBox = ({ query = "" }) => {
 
     // clearAll now resets filters and also clears the search query from the URL.
     const clearAll = () => {
-        // Don't reset the price range
+        // Reset price filter to default range
+        dispatch(addprice({ min: 0, max: 2000 }))
         dispatch(clearCategory())
         dispatch(clearCategoryToggle())
         dispatch(addSort(""))
@@ -124,7 +128,7 @@ const FilterShopBox = ({ query = "" }) => {
                         <div className="product-navtabs d-flex justify-content-end align-items-center">
                             <div className="tp-shop-selector">
                                 {(price?.min !== 0 ||
-                                    price?.max !== 100 ||
+                                    price?.max !== 2000 ||
                                     category?.length !== 0 ||
                                     sort !== "" ||
                                     perPage.start !== 0 ||
