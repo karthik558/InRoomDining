@@ -2,22 +2,30 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 
 export default function BackToTop() {
-    const [hasScrolled, setHasScrolled] = useState("false")
+    const [hasScrolled, setHasScrolled] = useState(false)
 
     useEffect(() => {
-        window.addEventListener("scroll", onScroll)
+        // Using throttling to improve scroll performance
+        let ticking = false;
+        const onScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 100) {
+                        setHasScrolled(true)
+                    } else {
+                        setHasScrolled(false)
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+        
+        window.addEventListener("scroll", onScroll, { passive: true })
         return () => {
             window.removeEventListener("scroll", onScroll)
         }
-    })
-
-    const onScroll = () => {
-        if (window.scrollY > 100 && !hasScrolled) {
-            setHasScrolled(true)
-        } else if (window.scrollY < 100 && hasScrolled) {
-            setHasScrolled(false)
-        }
-    }
+    }, [])
 
     return (
         <>

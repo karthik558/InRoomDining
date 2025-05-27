@@ -1,0 +1,115 @@
+/* Performance optimizations for admin layout */
+
+/* Use hardware acceleration for fixed elements */
+.admin-header {
+  transform: translateZ(0);
+  will-change: transform;
+  /* Remove expensive effects */
+  backdrop-filter: none;
+}
+
+/* Remove animated backgrounds */
+.admin-header::before {
+  display: none;
+}
+
+/* Optimize shadows for performance */
+.admin-header, 
+.admin-sidebar, 
+.admin-card,
+.admin-stats-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reduce nested shadows and gradient complexity */
+.stats-card,
+.stats-card-icon,
+.dashboard-stats .stats-card,
+.stats-grid .stats-card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Turn off animations that might cause jank */
+.stats-card:hover {
+  transform: none;
+}
+
+/* Use simple backgrounds instead of gradients when possible */
+.dashboard-header {
+  background: #782671;
+}
+
+/* Performance optimization on scrollable areas */
+.admin-sidebar,
+.admin-content {
+  will-change: scroll-position;
+}
+
+/* Remove complex background patterns */
+.admin-body::before,
+.admin-sidebar::before,
+.admin-content::before {
+  display: none;
+}
+
+/* Optimize table rendering */
+.admin-table {
+  contain: layout style;
+}
+
+/* Optimize table fixed header */
+.admin-table thead {
+  will-change: transform;
+}
+
+/* Simplify and speed up transitions */
+.admin-sidebar {
+  transition: transform 0.2s ease-out;
+}
+
+/* Performance optimization for list rendering */
+.sidebar-menu {
+  contain: content;
+}
+
+/* Only use opacity and transform for animations (better performance) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* All potential animation targets should use composite properties */
+.stats-card,
+.stats-count,
+.sidebar-item,
+.admin-card {
+  will-change: transform;
+}
+
+/* Prevent paint area sprawl for fixed-position elements */
+.mobile-menu-toggle {
+  contain: layout style;
+}
+
+/* Prevent unnecessary repaints for position:sticky elements */
+.admin-header,
+.admin-sidebar,
+.table-header {
+  contain: layout;
+}
+
+/* Simplify complex gradient backgrounds */
+.stats-card-primary,
+.stats-card-success,
+.stats-card-warning,
+.stats-card-info {
+  background-color: #782671;
+  background-image: none;
+}
+
+/* All filters are expensive to render - removing them if possible */
+.filter-container, 
+.stats-card-icon,
+.stats-card {
+  filter: none;
+}

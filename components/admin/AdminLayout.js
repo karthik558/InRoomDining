@@ -2,12 +2,16 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import usePerformanceOptimizations from './PerformanceOptimizer'
 
 export default function AdminLayout({ children }) {
   const pathname = usePathname()
   const router = useRouter()
   const [currentUser, setCurrentUser] = useState(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  
+  // Apply performance optimizations
+  usePerformanceOptimizations()
   
   const isActive = (path) => (pathname === path ? 'active' : '')
 
@@ -25,8 +29,11 @@ export default function AdminLayout({ children }) {
     router.push('/sign-in')
   }
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen)
+  const  // Use RAF for smoother sidebar toggle
+  toggleSidebar = () => {
+    requestAnimationFrame(() => {
+      setSidebarOpen(!sidebarOpen)
+    })
   }
 
   // For admin pages, require authentication

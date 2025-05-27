@@ -1,0 +1,251 @@
+/* Optimized Sign-in Page Styles with better performance */
+.signin-area {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 80px 0;
+}
+
+/* Simple gradient background instead of radial gradients */
+.signin-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  z-index: -1;
+}
+
+.signin-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(120, 38, 113, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.signin-card:hover {
+  transform: translateY(-5px);
+}
+
+.signin-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #782671 0%, #9c4a8a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 30px rgba(120, 38, 113, 0.2);
+}
+
+.signin-icon i {
+  color: white;
+  font-size: 32px;
+}
+
+/* Removed animation that might cause jank */
+
+.signin-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signin-header h2 {
+  color: #782671;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.signin-header p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #fafbfc;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #782671;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(120, 38, 113, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.signin-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #782671 0%, #9c4a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(120, 38, 113, 0.3);
+}
+
+.signin-btn:hover {
+  background: linear-gradient(135deg, #9c4a8a 0%, #782671 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(120, 38, 113, 0.4);
+}
+
+/* Success and error messages */
+.success-message {
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.success-message i {
+  color: #065f46;
+}
+
+.success-message span {
+  color: #065f46;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error-message {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-message i {
+  color: #dc2626;
+}
+
+.error-message span {
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Will-change hint for browser optimization */
+.signin-card {
+  will-change: transform;
+}
+
+/* Use transform instead of multiple properties */
+.signin-btn {
+  will-change: transform;
+}
+
+/* Additional form options styling */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.form-options .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-options a {
+  color: #782671;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-options input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #782671;
+}
+
+/* Admin credentials styling */
+.admin-credentials {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(120, 38, 113, 0.05);
+  border: 1px solid rgba(120, 38, 113, 0.1);
+  border-radius: 10px;
+}
+
+.admin-credentials-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #782671;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.admin-credentials-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.admin-credentials-info strong {
+  color: #333;
+  font-weight: 600;
+}

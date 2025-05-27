@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { monitorPagePerformance } from '@/components/admin/PerformanceMonitor'
 
 export default function AdminDashboard() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -13,23 +14,59 @@ export default function AdminDashboard() {
   })
 
   useEffect(() => {
-    const user = localStorage.getItem('currentAdminUser')
-    if (user) {
-      setCurrentUser(JSON.parse(user))
+    // Start performance monitoring
+    const cleanupMonitoring = monitorPagePerformance('AdminDashboard')
+    
+    // Load user data only once on mount
+    const loadUserData = () => {
+      const user = localStorage.getItem('currentAdminUser')
+      if (user) {
+        setCurrentUser(JSON.parse(user))
+      }
     }
+
+    // Use requestAnimationFrame for smoother rendering
+    requestAnimationFrame(() => {
+      loadUserData()
+    })
     
     // Load stats from localStorage or API
-    const savedUsers = JSON.parse(localStorage.getItem('adminUsers') || '[]')
-    setStats({
-      products: 12,
-      dealProducts: 5,
-      sliderProducts: 8,
-      testimonials: 24,
-      users: savedUsers.length + 1 // +1 for the default admin
-    })
+    const loadStats = () => {
+      try {
+        const savedUsers = JSON.parse(localStorage.getItem('adminUsers') || '[]')
+        setStats({
+          products: 12,
+          dealProducts: 5,
+          sliderProducts: 8,
+          testimonials: 24,
+          users: savedUsers.length + 1 // +1 for the default admin
+        })
+      } catch (error) {
+        console.error('Error loading stats:', error)
+        // Fallback stats if there's an error
+        setStats({
+          products: 12,
+          dealProducts: 5,
+          sliderProducts: 8,
+          testimonials: 24,
+          users: 1
+        })
+      }
+    }
+    
+    // Slightly delay stats loading to prioritize UI rendering
+    setTimeout(() => {
+      requestAnimationFrame(loadStats)
+    }, 100)
+    
+    // Cleanup function
+    return () => {
+      if (cleanupMonitoring) cleanupMonitoring()
+    }
   }, [])
 
-  const dashboardCards = [
+  // Memoize dashboard cards to prevent unnecessary re-renders
+  const dashboardCards = useMemo(() => [
     {
       title: 'Products',
       description: 'Manage your product catalog',
@@ -66,7 +103,7 @@ export default function AdminDashboard() {
       color: 'warning',
       permission: 'testimonials'
     }
-  ]
+  ], [stats])
 
   const hasPermission = (permission) => {
     if (!currentUser) return false
